@@ -8,6 +8,7 @@ name: Generic repository security scan
 on:
   push:
     branches:
+      # Don't run on _every_ branch, but do make it available if there is any direct push
       - main
   pull_request:
     branches:
