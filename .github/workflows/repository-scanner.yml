@@ -6,15 +6,16 @@
 name: Generic repository security scan
 
 on:
-  push:
-    branches:
-      # Don't run on _every_ branch, but do make it available if there is any direct push
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        branches:
+            # Don't run on _every_ branch, but do make it available if there is any direct push
+            - main
+    pull_request:
+        branches:
+            - main
+            - codeowners-test
+    workflow_dispatch:
 
 jobs:
-   scan-repo:
-    uses: ed-fi-alliance-oss/ed-fi-actions/.github/workflows/repository-scanner.yml@latest
+    scan-repo:
+        uses: ed-fi-alliance-oss/ed-fi-actions/.github/workflows/repository-scanner.yml@latest
